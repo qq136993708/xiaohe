@@ -51,8 +51,9 @@
                 <div class="team_head">
                    <h1 class="lz">来自服务团队的信</h1>
                 </div>
+                <!-- showInfo -->
                 <div id="dj" class="dj">
-                   <div style="display:flex;align-items:center;justify-content:center">
+                   <div class="dj_show" id="dj_show">
                         <h1 class="zk">点击展开具体内容</h1>
                         <span class="dsj" id="dsj"></span>
                    </div>
@@ -89,7 +90,7 @@
                        <p class="first_text" style="text-align: right;">
                             来自：小禾服务团队
                        </p>
-                       <div id="sq2">
+                       <div id="sq2" class="dj_show">
                             <h1 class="zk">点击收起</h1>
                             <span class="zsj"></span>
                        </div>
@@ -102,8 +103,7 @@
                         <h1 class="lz">来自产品经理的信</h1>
                      </div>
                      <div id="cdj" class="dj">
-                        <div style="display:flex;align-items: center;
-                        justify-content: center;">
+                        <div id="cdjz" class="dj_show">
                                 <h1 class="zk">点击展开具体内容</h1>
                                 <span class="dsj" id="cdj"></span>
                         </div>
@@ -140,7 +140,7 @@
                                     来自：小禾产品研发部
                                     
                             </p>
-                            <div id="sq">
+                            <div id="sq" class="dj_show">
                                 <h1 class="zk">点击收起</h1>
                                 <span class="zsj"></span>
                             </div>
@@ -150,32 +150,34 @@
                     </div>
               <div class="third">
                    <!-- 活动说明 -->
+                   
                    <p class="third_img"></p>
                    <div class="team_head">
                       <h1 class="hd">活动说明</h1>
                    </div>
-                   <p>活动主题：<span>【有奖反馈】用户与技术服务交流活动</span></p>
-                   <p>活动时间：<span>长期有效</span></p>
-                   <p>参与用户：<span>全体爱校用户</span></p>
-                   <p>奖品设置：
-                       <ul>
+                  
+                   <p  class="first_text">活动主题：<span>【有奖反馈】用户与技术服务交流活动</span></p>
+                   <p  class="first_text">活动时间：<span>长期有效</span></p>
+                   <p  class="first_text">参与用户：<span>全体爱校用户</span></p>
+                   <p  class="first_text">奖品设置：
+                       <ul style="text-align: center;">
                            <li class="jp">
-                               <span>一等奖</span>
+                               <span class="first_text">一等奖</span>
                                <div class="jpjt"></div>
                                <p class="jpwz">爱校免费续约</p>
                            </li>
                            <li class="jp">
-                               <span>二等奖</span>
+                               <span class="first_text">二等奖</span>
                                <div class="jpjt"></div>
                                <p class="jpwz">爱校免费续约</p>
                            </li>
                            <li class="jp">
-                               <span>三等奖</span>
+                               <span class="first_text">三等奖</span>
                                <div class="jpjt"></div>
                                <p class="jpwz">爱校免费续约</p>
                            </li>
                            <li class="jp">
-                               <span>四等奖</span>
+                               <span class="first_text">四等奖</span>
                                <div class="jpjt"></div>
                                <p class="jpwz">爱校免费续约</p>
                            </li>
@@ -183,30 +185,33 @@
                    </p>
                    <h1 class="lz">补充说明</h1>
                    <ul>
-                       <p>•每双周五于公众号【爱校服务号】公开上阶段收录的需求及提出者，进行投票</p>
-                       <p>•隔周周五于公众号上公开【投票结果】，票数越高，奖项越大；</p>
-                       <p>•每期必有一大奖，最大奖送爱校免费延期【1月】服务（可重复获得）；</p>
-                       <p>•实物奖品将在核实联系方式后邮寄发放，虚拟奖品将直接由专属顾问发放；</p>
-                       <p>•最终解释权归小禾科技所有。</p>
+                       <p  class="first_text">•每双周五于公众号【爱校服务号】公开上阶段收录的需求及提出者，进行投票</p>
+                       <p  class="first_text">•隔周周五于公众号上公开【投票结果】，票数越高，奖项越大；</p>
+                       <p  class="first_text">•每期必有一大奖，最大奖送爱校免费延期【1月】服务（可重复获得）；</p>
+                       <p  class="first_text">•实物奖品将在核实联系方式后邮寄发放，虚拟奖品将直接由专属顾问发放；</p>
+                       <p  class="first_text">•最终解释权归小禾科技所有。</p>
                    </ul>
-              </div>
+              
+            </div>
               <div class="four">
                 <p class="four_img"></p>
                 <h1 class="lz">问题反馈表<br >
-                    <span>*均为必填项</span>
+                    <span style="font-size:0.16rem">*均为必填项</span>
                 </h1>
                 <div class="form-field">
                     <form action="">
                         <p class="first-line">
-                            <input type="text" value="*请输入你的名字">
-                            <input type="text"  value="*请输入你的名字">
+                            <input type="text" placeholder="*请输入你的名字">
+                            <input type="text" name="phone" placeholder="*您的手机号" >
+                            <!-- <span style="display:none" id="errorMsg"/> -->
                             <select value="选择类型" class="select">
                                 <option>爱学</option>    
                                 <option>爱校</option>    
                                 <option>爱盟</option>    
                             <select>
-                        </p><p class="first-line second-line">
-                            <input type="text" value="*请输入你的名字">
+                        </p>
+                        <p class="first-line second-line">
+                            <input type="text" placeholder="*简单的问题描述">
                            
                             <select value="选择类型" class="select">
                                     <option>爱学</option>    
@@ -223,6 +228,56 @@
                         </p>
                     </form>
                 </div>
+                <div class="form-more">
+                    <form action="">
+                              <p class="kz"> 扩展表单（选填）</p>
+                            <p class="first-line more-line">
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机构名称：
+                                <input type="text" placeholder="请填写具体名称">
+                            </p>
+                            <p class="first-line more-line">
+                                   其他联系方式：
+                                <input type="text" name="phone" placeholder="E-mail或 其他手机号码" >
+                                </p>
+                                <p class="first-line more-line">您的机构选择：
+                                <select placeholder="选择省" class="select"/>
+                                    <option>选择省</option>    
+                                    <option>自动定位</option>    
+                                    <option>北京</option>    
+                                    <option>河北</option>    
+                                    <option>上海</option>    
+                                    <option>广州</option>    
+                                <select> 
+                                <select name="" id="" value="选择市">
+                                        <option>选择市</option>    
+                                        <!-- <option>自动定位</option> -->
+                                </select>
+                                <select name="" id="" value="选择区">
+                                        <option>选择区</option>  
+                                </select>
+                                <input class="left-in" type="text" placeholder="请填写详细街道及门牌号">
+                                    </p>
+                            <p class="first-line more-line">机构经营类型：
+                                <input type="text" placeholder="类型 经营范围等">
+                            </p>
+                            <p class="first-line second-line more-line">
+                                您关注爱校
+                                <input class="fx" type="checkbox" value="招生 活动">招生 活动
+                                <input class="fx" type="checkbox" placeholder="业务管理">业务管理
+                                <input class="fx" type="checkbox" placeholder="数据管理">数据管理
+                               </p>
+                            <p class="first-line second-line more-line">
+                                哪些功能点
+                                <input class="fx" type="checkbox" placeholder="加盟中心">加盟中心&nbsp;
+                                <input class="fx" type="checkbox" placeholder="APP">APP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input class="fx" type="checkbox" placeholder="其他">其他
+                               </p>
+                            <p class="f-line p_line">
+                                <button>收起</button>
+                                <button>提交</button>
+                            </p>
+                        </form>
+                        </div
               </div>
               <div class="footer">
                   <img src="./asets/img/icon_0001u119.png" alt="">
