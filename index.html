@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-	<title>有奖反馈</title>
+	<title>小禾科技产品有奖反馈</title>
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/act.css">
 	<link rel="stylesheet" href="./css/city.css">
@@ -11,6 +11,7 @@
 <body>
 	<div class="container">
 		<!-- 头部 -->
+		<p class="text-hidden">凡是提交成功的爱校用户，一旦您的需求被收录，均有机会获得爱校团队送出的精美礼品哦。</p>
 		<div class="act-head">
 			<div class="head-logo">
 					<a href="javascript:;" class="logo-head"><img src="./img/logo.png" alt=""></a>
@@ -171,10 +172,10 @@
 							<p class="link-up-subtitle">*均为必填选项</p>
 						</div>
 						<div class="link-form">
-								<form action="">
+								<form action="./from.html" id="myFrom" name="from1" >
 										<div class="groups">
 											<input class="baseLen"  type="text" id="name" placeholder="*请输入您的名字">
-											<input  id="phone" class="baseLen" id="phone" type="text" placeholder="*您的手机号">
+											<input  id="phone" class="baseLen"  type="text" placeholder="*您的手机号">
 											<div class="select-text">
 											<select class="baseLen"  name="" id="idea">
 												<!-- <option value="">选择类型</option> -->
@@ -276,14 +277,15 @@
 											</div>
 											
 										</div>
+										<div class="btn-groups">
+											<input type="submit" class="btn btn-khaki" id="sub" value="提交" name="">											
+											<a href="javascript:;" class="btn btn-green" id="text-more">填写更多</a>
+											<a href="javascript:;" class="btn btn-green btn-up" id="slideup" style="display:none;">收起</a>
+										</div>
 									</form>
 		
 						</div>
-						<div class="btn-groups">
-							<a href="from.html" class="btn btn-khaki" id="registerBtn">提交</a>
-							<a href="javascript:;" class="btn btn-green" id="text-more">填写更多</a>
-							<a href="javascript:;" class="btn btn-green btn-up" id="slideup" style="display:none;">收起</a>
-						</div>
+						
 					</div>
 				</dd>
 			</dl>
