@@ -146,7 +146,7 @@ $(function() {
 		console.log(doms)
 		for (var i = 0; i < doms.length; i++) {
 			var id = doms[i];
-			var temp = jduge($(id),id);
+			var temp = jduge($(id),id); 
 			if(flag && !temp){ 
 				flag =false;
 			}
@@ -154,4 +154,14 @@ $(function() {
 		return flag;
 	});
 });
-
+// 微信分享显示缩略图
+$(function(){
+	if(navigator.userAgent.match(/MicroMessenger/i)){
+		var weixinShareLogo = 'http://feedback.baonahao.com/img/logo.jpg';
+	$('body').prepend('<div style=" overflow:hidden; width:0px; height:0; margin:0 auto; position:absolute; top:-800px;"><img src="'+ weixinShareLogo +'"></div>')
+	
+	};
+	});
+	
+	
+	

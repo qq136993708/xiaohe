@@ -1,4 +1,4 @@
-.container {
+﻿.container {
 	font-size: 0;
 	/* 消除行内元素之间有空隙的影响 */
 	margin: 0 .2rem;
@@ -207,13 +207,16 @@
 	width: inherit;
 	height: 1.5rem;
 	overflow: hidden;
-	background: #ccc;
+	/* background: #ccc; */
 	margin-bottom: .04rem;
 }
-
+.img-box img{
+	background-size: 100% 100%;
+}
 .act-name {
 	font-size: .2rem;
 	color: #666;
+	font-weight: bold;
 }
 
 .tips-title {
@@ -224,12 +227,12 @@
 }
 
 .tips-info {
-	font-size: .3rem;
+	font-size: .28rem;
 	color: #666;
 	margin-bottom: .1rem;
 }
 
-.tips-info:before {
+/* .tips-info:before {
 	content: "";
 	width: .06rem;
 	height: .06rem;
@@ -238,7 +241,7 @@
 	display: inline-block;
 	vertical-align: middle;
 	margin-right: .1rem;
-}
+} */
 
 .link-up-head {
 	text-align: center;
@@ -270,10 +273,13 @@
 
 .groups input[type='text'],
 .groups select,
-.groups textarea {
+.groups textarea,
+.btn-groups input[type='submit'] {
 	-webkit-appearance: none;
 }
-
+.addLabel{
+	padding-left: .2rem;
+}
 .groups {
 	margin-bottom: .2rem;
 }
@@ -290,7 +296,15 @@
 .groups .baseLen+.baseLen {
 	margin-left: 2.6%;
 }
+@media screen and (min-width:1200px){
+	.groups .baseLen+.baseLen {
+		margin-left: 3.333333333333333%;
+	}
+	.groups .dbBaseLen {
+		width: 65%;
+	}
 
+}
 .groups select.baseLen {
 	padding: .08rem;
 }
@@ -391,7 +405,7 @@
 	display: inline-block;
 	vertical-align: middle;
 	width: 5em;
-	margin-right: .2rem;
+	margin-right: .17rem;
 }
 
 
@@ -518,4 +532,21 @@
 	font-size: 0;
 	overflow: auto;
 	text-align: initial;
+}
+/* 抽奖背景图 */
+.act-img-box .item .img-box.first{
+	background-image: url("../img/aixiao.png");
+	background-size: 100% 100%;
+}
+.act-img-box .item .img-box.second{
+	background-image: url("../img/camera.png");
+	background-size: 100% 100%;
+}
+.act-img-box .item .img-box.third{
+	background-image: url("../img/upan.png");
+	background-size: 100% 100%;
+}
+.act-img-box .item .img-box.fourth{
+	background-image: url("../img/redmoney.png");
+	background-size: 100% 100%;
 }

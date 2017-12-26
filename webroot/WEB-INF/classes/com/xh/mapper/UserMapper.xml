@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace用于绑定接口对象 -->
+<mapper namespace="com.xh.mapper.UserMapper">
+
+	<resultMap type="com.xh.pojo.User" id="userResultMap">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="username" property="username" jdbcType="VARCHAR" />
+		<result column="phoneNumber" property="phoneNumber" jdbcType="VARCHAR" /> 
+		<result column="otherContact" property="otherContact" jdbcType="VARCHAR" /> 
+	</resultMap> 
+ 
+	<!-- 保存用户 --> 
+	<insert id="saveUser" parameterType="com.xh.pojo.User"> 
+		insert into t_user 
+		(username,phoneNumber,otherContact)  
+		values  
+		(#{username},#{phoneNumber},#{otherContact}) 
+		
+		
+	</insert>
+	<select id="getUserId"  parameterType="com.xh.pojo.User" resultType="java.lang.Integer" >
+		select id from t_user where username=#{username} and  phoneNumber=#{phoneNumber} and  otherContact=#{otherContact}  
+	</select>
+	
+	
+	
+	
+	<insert id="insertUser" parameterType="com.xh.pojo.User">
+		insert into t_user
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="username != null">
+				username,
+			</if>
+			<if test="phoneNumber != null">
+				phoneNumber,
+			</if>
+			<if test="otherContact != null">
+				otherContact,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="username != null">
+				#{username},
+			</if>
+			<if test="phoneNumber != null">
+				#{phoneNumber},
+			</if>
+			<if test="otherContact != null">
+				#{otherContact},
+			</if>
+		</trim>
+		<selectKey resultType="int" keyProperty="id">
+			select @@identity
+		</selectKey>
+	</insert>
+</mapper>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace用于绑定接口对象 -->
+<mapper namespace="com.xh.mapper.MechanismMapper">
+
+	<resultMap type="com.xh.pojo.Mechanism" id="mechanismResultMap">
+		<id column="id" property="id" jdbcType="INTEGER" />
+
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="province" property="ch_province" jdbcType="VARCHAR" />
+		<result column="city" property="ch_city" jdbcType="VARCHAR" />
+		<result column="area" property="ch_area" jdbcType="VARCHAR" />
+		<result column="mechanismType" property="mechanismType"
+			jdbcType="VARCHAR" />
+		<result column="features" property="features" jdbcType="VARCHAR" />
+	</resultMap>
+
+
+	<!-- 保存用户 -->
+	<insert id="saveMechanism" parameterType="com.xh.pojo.User">
+		insert into t_mechanism
+		(name,province,city,area,
+		mechanismType,features)
+		values
+		(#{name},#{ch_province},#{ch_city},#{ch_area},#{mechanismType},#{features})
+	</insert>
+	<select id="getMechanism" resultType="com.xh.pojo.Mechanism">
+		sleect * from t_mechanism
+		where id=#{id}
+	</select>
+	<select id="getMechanismId"  parameterType="com.xh.pojo.Mechanism"  resultType="java.lang.Integer" >
+	 	select id  from t_mechanism
+	 	
+	 	<where>
+	 		<choose>
+	 			<when test="name!=null and name!=''">
+	 			
+	 				and name=#{name}
+	 			</when>
+	 			<when test="ch_province!=null and ch_province!=''">
+	 				and province=#{ch_province}
+	 			</when>
+	 			<when test="ch_city!=null and ch_city!=''">
+	 				and city=#{ch_city}
+	 			</when>
+	 			<when test="ch_area!=null and ch_area!=''">
+	 				and area=#{ch_area}
+	 			</when>
+	 			<when test="mechanismType!=null  and mechanismType!=''">
+	 				and mechanismType=#{mechanismType}
+	 			</when>
+	 			<when test="features!=null and features!=''">
+	 				and features=#{features}
+	 			</when>
+	 			 
+	 		</choose>
+	 		
+	 	</where>
+ 	</select>
+	
+	<insert id="insertMechanism">
+		insert into t_mechanism
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="name != null">
+				name,
+			</if>
+			<if test="ch_province != null">
+				province,
+			</if>
+			<if test="ch_city != null">
+				city,
+			</if>
+			<if test="ch_area != null">
+				area,
+			</if>
+			
+			<if test="fullAddress != null">
+				fullAddress,
+			</if>
+			<if test="mechanismType != null">
+				mechanismType,
+			</if>
+			<if test="features != null">
+				features,
+			</if>
+
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="name != null">
+				#{name},
+			</if>
+			<if test="ch_province != null">
+				#{ch_province},
+			</if>
+			<if test="ch_city != null">
+				#{ch_city},
+			</if>
+			<if test="ch_area != null">
+				#{ch_area},
+			</if>
+			<if test="fullAddress != null">
+				#{fullAddress},
+			</if>
+			<if test="mechanismType != null">
+				#{mechanismType},
+			</if>
+			<if test="features != null">
+				#{features},
+			</if>
+		</trim>
+		<selectKey resultType="int" keyProperty="id">
+			select @@identity
+		</selectKey>
+	</insert>
+</mapper>
